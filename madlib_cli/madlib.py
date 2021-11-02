@@ -54,4 +54,9 @@ if __name__ == "__main__":
     tuple_of_words = tuple(i for i in list_of_words)
 
     final_result = merge(stripped_text, tuple_of_words,)
-    print(final_result)
+    with open('./assets/user_story.txt', 'w') as user_story:
+        user_story.truncate(0)
+        user_story.write(final_result)
+
+    print("Here is your story:\n" + final_result)
+
