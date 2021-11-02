@@ -44,5 +44,14 @@ def write_result_in_file():
 
 if __name__ == "__main__":
     welcome_mss()
-    text_from_file = read_template('./assets/dark_and_stormy_night_template.txt')
-    parse_template(text_from_file)
+    text_from_file = read_template('./assets/tempate.txt')
+    stripped_text, parts = parse_template(text_from_file)
+    list_of_words = []
+    for part in parts :
+        word_from_user = input(f"give me a word that is {part}\n>")
+        list_of_words.append(word_from_user)
+    
+    tuple_of_words = tuple(i for i in list_of_words)
+
+    final_result = merge(stripped_text, tuple_of_words,)
+    print(final_result)
